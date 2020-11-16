@@ -1,6 +1,6 @@
 # MSEI Scientific Seminar
 
-This repo tracks my work on a writing assignment.
+This repo tracks my work on a scientific paper writing assignment. To preview the most current version, click [here](scientific_seminar.pdf).
 
 ## Reference Papers
 1. https://ieeexplore.ieee.org/document/8729264  
