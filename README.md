@@ -9,4 +9,3 @@ This repo tracks my work on a scientific paper writing assignment. To preview th
 
 ## Layout
 This paper uses the [IEEEtran template](http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/).
-
