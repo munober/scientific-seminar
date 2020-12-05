@@ -10,19 +10,15 @@
 \def\rightmark{\@IEEEcompsoconly{\sffamily}\MakeUppercase{\protect#2}}}
 \makeatother
 
-% Use this package for new German hyphenation and to set some 
-% captions to German (e.g. Abstract -> Zusammenfassung)
+% Use this package for new German hyphenation and to set some captions to German (e.g. Abstract -> Zusammenfassung)
 % \usepackage[ngerman]{babel}
 
 % Select input file coding Latin1 or UTF8.
-% See "http://en.wikipedia.org/wiki/Latin1" and "http://en.wikipedia.org/wiki/Utf8"
-% for more information.
-%
+% See "http://en.wikipedia.org/wiki/Latin1" and "http://en.wikipedia.org/wiki/Utf8" for more information
 %\usepackage[latin1]{inputenc}
 \usepackage[utf8]{inputenc}
 
 \usepackage[T1]{fontenc}
-%
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
 % \documentclass[journal]{../sty/IEEEtran}
@@ -51,197 +47,84 @@
 % *** MATH PACKAGES ***
 %
 %\usepackage[cmex10]{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics. If using
-% it, be sure to load this package with the cmex10 option to ensure that
-% only type 1 fonts will utilized at all point sizes. Without this option,
-% it is possible that some math symbols, particularly those within
-% footnotes, will be rendered in bitmap form which will result in a
-% document that can not be IEEE Xplore compliant!
-%
-% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
+% A popular package from the American Mathematical Society that provides many useful and powerful commands for dealing with mathematics. If using it, be sure to load this package with the cmex10 option to ensure that only type 1 fonts will utilized at all point sizes. Without this option, it is possible that some math symbols, particularly those within footnotes, will be rendered in bitmap form which will result in a document that can not be IEEE Xplore compliant!
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000 thus preventing page breaks from occurring within multiline equations. Use:
 %\interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally does. amsmath.sty is already installed on most LaTeX systems. The latest version and documentation can be obtained at: http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
 
 % *** SPECIALIZED LIST PACKAGES ***
 %
 %\usepackage{algorithmic}
 % algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
-% There is also a support site at:
-% http://algorithms.berlios.de/index.html
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+% This package provides an algorithmic environment fo describing algorithms. You can use the algorithmic environment in-text or within a figure environment to provide for a floating algorithm. Do NOT use the algorithm floating environment provided by algorithm.sty (by the same authors) or algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated algorithm float types and packages that provide these will not provide correct IEEE style captions. The latest version and documentation of algorithmic.sty can be obtained at: http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at: http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable) algorithmicx.sty package by Szasz Janos: http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
 
 % *** ALIGNMENT PACKAGES ***
 %
 %\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/tools/
-
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves the standard LaTeX2e array and tabular environments to provide better appearance and additional user controls. As the default LaTeX2e table generation code is lacking to the point of almost being broken with respect to the quality of the end results, all users are strongly advised to use an enhanced (at the very least that provided by array.sty) set of table tools. array.sty is already installed on most systems. The latest version and documentation can be obtained at: http://www.ctan.org/tex-archive/macros/latex/required/tools/
 
 %\usepackage{mdwmath}
 %\usepackage{mdwtab}
-% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
-% especially mdwmath.sty and mdwtab.sty which are used to format equations
-% and tables, respectively. The MDWtools set is already installed on most
-% LaTeX systems. The lastest version and documentation is available at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools, especially mdwmath.sty and mdwtab.sty which are used to format equations and tables, respectively. The MDWtools set is already installed on most LaTeX systems. The lastest version and documentation is available at: http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
 
 
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to generate multiline equations as well as matrices, tables, etc., of high quality.
 
 
 %\usepackage{eqparbox}
-% Also of notable interest is Scott Pakin's eqparbox package for creating
-% (automatically sized) equal width boxes - aka "natural width parboxes".
-% Available at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+% Also of notable interest is Scott Pakin's eqparbox package for creating (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at: http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
 
 % *** SUBFIGURE PACKAGES ***
 %\usepackage[tight,footnotesize]{subfigure}
-% subfigure.sty was written by Steven Douglas Cochran. This package makes it
-% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
-% work, it is a good idea to load it with the tight package option to reduce
-% the amount of white space around the subfigures. subfigure.sty is already
-% installed on most LaTeX systems. The latest version and documentation can
-% be obtained at:
-% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE work, it is a good idea to load it with the tight package option to reduce the amount of white space around the subfigures. subfigure.sty is already installed on most LaTeX systems. The latest version and documentation can be obtained at: http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
 % subfigure.sty has been superceeded by subfig.sty.
-
-
 
 %\usepackage[caption=false]{caption}
 %\usepackage[font=footnotesize]{subfig}
-% subfig.sty, also written by Steven Douglas Cochran, is the modern
-% replacement for subfigure.sty. However, subfig.sty requires and
-% automatically loads Axel Sommerfeldt's caption.sty which will override
-% IEEEtran.cls handling of captions and this will result in nonIEEE style
-% figure/table captions. To prevent this problem, be sure and preload
-% caption.sty with its "caption=false" package option. This is will preserve
-% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
-% (recommended due to many improvements over 1.2) of subfig.sty supports
-% the caption=false option directly:
+% subfig.sty, also written by Steven Douglas Cochran, is the modern replacement for subfigure.sty. However, subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty which will override IEEEtran.cls handling of captions and this will result in nonIEEE style figure/table captions. To prevent this problem, be sure and preload caption.sty with its "caption=false" package option. This is will preserve IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later  (recommended due to many improvements over 1.2) of subfig.sty supports the caption=false option directly:
 %\usepackage[caption=false,font=footnotesize]{subfig}
-%
-% The latest version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
-% The latest version and documentation of caption.sty can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+% The latest version and documentation can be obtained at: http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at: http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
 
 % *** FLOAT PACKAGES ***
 %
 %\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure. The latest version and documentation can be found at:
+% fixltx2e, the successor to the earlier fix2col.sty, was written by Frank Mittelbach and David Carlisle. This package corrects a few problems in the LaTeX2e kernel, the most notable of which is that in current LaTeX2e releases, the ordering of single and double column floats is not guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a single column figure to be placed prior to an earlier double column figure. The latest version and documentation can be found at:
 % http://www.ctan.org/tex-archive/macros/latex/base/
 
-
-
 %\usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e the ability to do double column floats at the bottom of the page as well as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in LaTeX2e). It also provides a command:
 %\fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
-% Documentation is contained in the stfloats.sty comments as well as in the
-% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
-% does not allow \baselineskip to stretch. Authors submitting work to the
-% IEEE should note that IEEE rarely uses double column equations and
-% that authors should try to avoid such use. Do not be tempted to use the
-% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
-% not format its papers in such ways.
-
+% to enable the placement of footnotes below bottom floats (the standard LaTeX2e kernel puts them above bottom floats). This is an invasive package which rewrites many portions of the LaTeX2e float routines. It may not work with other packages that modify the LaTeX2e float routines. The latest version and documentation can be obtained at: http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE does not allow \baselineskip to stretch. Authors submitting work to the IEEE should note that IEEE rarely uses double column equations and that authors should try to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does not format its papers in such ways.
 
 %\ifCLASSOPTIONcaptionsoff
 %  \usepackage[nomarkers]{endfloat}
 % \let\MYoriglatexcaption\caption
 % \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
 %\fi
-% endfloat.sty was written by James Darrell McCauley and Jeff Goldberg.
-% This package may be useful when used in conjunction with IEEEtran.cls'
-% captionsoff option. Some IEEE journals/societies require that submissions
-% have lists of figures/tables at the end of the paper and that
-% figures/tables without any captions are placed on a page by themselves at
-% the end of the document. If needed, the draftcls IEEEtran class option or
-% \CLASSINPUTbaselinestretch interface can be used to increase the line
-% spacing as well. Be sure and use the nomarkers option of endfloat to
-% prevent endfloat from "marking" where the figures would have been placed
-% in the text. The two hack lines of code above are a slight modification of
-% that suggested by in the endfloat docs (section 8.3.1) to ensure that
-% the full captions always appear in the list of figures/tables - even if
-% the user used the short optional argument of \caption[]{}.
-% IEEE papers do not typically make use of \caption[]'s optional argument,
-% so this should not be an issue. A similar trick can be used to disable
-% captions of packages such as subfig.sty that lack options to turn off
-% the subcaptions:
+% endfloat.sty was written by James Darrell McCauley and Jeff Goldberg. This package may be useful when used in conjunction with IEEEtran.cls' captionsoff option. Some IEEE journals/societies require that submissions have lists of figures/tables at the end of the paper and that figures/tables without any captions are placed on a page by themselves at the end of the document. If needed, the draftcls IEEEtran class option or \CLASSINPUTbaselinestretch interface can be used to increase the line spacing as well. Be sure and use the nomarkers option of endfloat to prevent endfloat from "marking" where the figures would have been placed in the text. The two hack lines of code above are a slight modification of that suggested by in the endfloat docs (section 8.3.1) to ensure that the full captions always appear in the list of figures/tables - even if the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument, so this should not be an issue. A similar trick can be used to disable captions of packages such as subfig.sty that lack options to turn off the subcaptions:
 % For subfig.sty:
 % \let\MYorigsubfloat\subfloat
 % \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
 % For subfigure.sty:
 % \let\MYorigsubfigure\subfigure
 % \renewcommand{\subfigure}[2][\relax]{\MYorigsubfigure[]{#2}}
-% However, the above trick will not work if both optional arguments of
-% the \subfloat/subfig command are used. Furthermore, there needs to be a
-% description of each subfigure *somewhere* and endfloat does not add
-% subfigure captions to its list of figures. Thus, the best approach is to
-% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
-% and instead reference/explain all the subfigures within the main caption.
-% The latest version of endfloat.sty and its documentation can obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
-%
-% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a 
-% page by themselves.
+% However, the above trick will not work if both optional arguments of the \subfloat/subfig command are used. Furthermore, there needs to be a description of each subfigure *somewhere* and endfloat does not add subfigure captions to its list of figures. Thus, the best approach is to avoid the use of subfigure captions (many IEEE journals avoid them anyway) and instead reference/explain all the subfigures within the main caption. The latest version of endfloat.sty and its documentation can obtained at: http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used later in the document, say, to conditionally put the References on a  page by themselves.
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
-
 \begin{document}
 \title{Comparison of SQL Relational Databases and NoSQL Graph Databases}
 %
-% author names and IEEE memberships
-% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
-% a structure at a ~ so this keeps an author's name from being broken across
-% two lines.
-% use \thanks{} to gain access to the first footnote area
-% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
-% was not built to handle multiple paragraphs
-%
+% author names and IEEE memberships note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break a structure at a ~ so this keeps an author's name from being broken across two lines.
+% use \thanks{} to gain access to the first footnote area a separate \thanks must be used for each paragraph as LaTeX2e's \thanks was not built to handle multiple paragraphs.
 
 \author{Teodor Fratiloiu}% <-this % stops a space
 %\thanks{M. Shell is with the Department
@@ -269,7 +152,7 @@
 % space somehow managed to creep in.
 
 % The paper headers
-\markboth{Scientific Seminar for Security in Information Technology, Winter Term 2020}%
+\markboth{Scientific Seminar - Security in Information Technology, Winter Term 2020}%
 {Teodor Fratiloiu: Comparison of SQL Relational Databases and NoSQL Graph Databases}
 
 %\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
@@ -285,8 +168,7 @@
 % If you want to put a publisher's ID mark on the page you can do it like
 % this:
 %\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark.
+% Remember, if you use this you must call \IEEEpubidadjcol in the second column for its text to clear the IEEEpubid mark.
 
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
@@ -300,6 +182,8 @@
 Classic, relational, SQL databases have proven their reliability, and versatility, in many different scenarios, over the past few decades. However wide their field of application may be though, there are still many situations, where one can be limited, by the constraints, of these traditional data structures. Efficiently querying very large user databases is one such situation. In this work, we are going to investigate a different paradigm for  big data management: Graph Databases. This relatively new breed of data management systems are already finding wide acceptance, and are being actively deployed across many industries. Use cases such as social media applications come to mind, where scalability is of prime importance, since datasets could theoretically achieve infinite dimensions. In this work, we will compare Graph, NoSQL databases, their strengths, and weaknesses, to classic, relational SQL databases.
 
 \end{abstract}
+
+\textbf{Keywords:} Relational Database, NoSQL Graph Database, Tablespace 
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
 % if the journal you are submitting to favors bold math in the abstract,
@@ -326,27 +210,62 @@ Classic, relational, SQL databases have proven their reliability, and versatilit
 
 
 \section{Introduction}
-In general a scientific paper starts with an introduction to the topic.
+The main issue with classic, SQL databases is the exponential way in which hardware requirements scale up with the amount of data stored. This means that it becomes exponentially more challenging to maintain speed, RAM and storage amounts within reasonable constraints, as the amount of data increases. \par
+The ACID (Atomicity, Consistency Isolation, Durability) property of SQL databases helps maintain consistency across the data, and enables efficient polling and querying, but even this is eventually overcome by the sheer size of modern databases for online, user-generated content. \par
+Even if SQL databases store data in separate tables, and normalization techniques, such as 1NF, 2NF and 3NF, can be used to reduce redundancy, this method remains unsuitable for modern applications. For instance, although it is possible to \textit{join} queries when searching a SQL databases for entries, this too becomes inefficient when using 20 or more parameters. \par
+Let us therefore introduce NoSQL databases. The main difference between these, and SQL databases, is how they scale. While SQL databases scale \textit{vertically}, NoSQL databases scale \textit{horizontally}. Specifically, it is the BASE (Basically Available State and Eventually Consistent) property of NoSQL databases which enables them to be a perfect choice for very large, connected, amounts of data. \par
+It has been proved in research literature, as well as by the industry, that Graph databases perform radically better than relational databases for big data applications. This is especially true in scenarios where one can use the connected nature of data to their advantage. One prominent example of this is how Neo4j (NoSQL) performs much better than Oracle 11g (SQL). \par
+However, let us not forget that Graph databases are not the only kind of NoSQL database out there. In fact, there are four types in total. Let us therefore examine these in detail.
+\subsection{Types of NoSQL Databases}
+There are four different kinds of NoSQL databases. Their properties and use scenarios depend on the needs and requirements of the applications in which they are used. 
+\begin{itemize}
+	\item \textbf{Key-Value}: these are, essentially, hash tables, where only unique hash keys are used to search for and point to specific values; the contents themselves are not used during queries.
+	\item \textbf{Document}: Data is stored as a key/value tuple, and both the content, as well as the \textit{key} are used for searches, which constitutes a major difference from the type above. Documents of this type can be stored in XML, JSON and BSON formats, and popular apps using this type of database include MongoDB and CouchDB.
+	\item \textbf{Wide-Column}: These databases are made unique by the hybrid approach used to store data. In this scenario, which is mainly used in \textit{cluster environments} and for distributed data, we will combine the features of relational databases with a key-value storage schema. Examples such as Hbase, Cassandra and Accumulo spring to mind.
+	\item \textbf{Graph}: This type is used where the data has a high degree of connectivity, since such databases can naturally store relationships between Independent pieces of data. Examples include Neo4j, Pregel, ArrangoDB and OrientDB. 
+\end{itemize}
+Actual examples, together with actual package names, query languages and properties, can be found in \textit{Table \ref{table_types_nosql}}. 
 
+\begin{table}[!t]
+	\renewcommand{\arraystretch}{1.3} % increase table row spacing, adjust to taste
+	\caption{Types of NoSQL Databases with Examples}
+	\label{table_types_nosql}
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Type & Package & Query Language & Property Support  \\
+		\hline
+		Graph & Neo4j & CypherQL & ACID \\
+		\hline
+		Graph & ArangoDB & AQL & \\
+		\hline
+		 & Hive & HQL & \\
+		\hline
+		Graph & OrientDB & SQL & ACID \\
+		\hline
+		Key-Value & Riak & &  \\
+		\hline
+		Key-Value & Redis & & \\
+		\hline
+		Key-Value & Voldemort & & \\
+		\hline
+		Column & Hbase & & \\
+		\hline
+		Column & Accumulo & & \\
+		\hline
+		Document & MongoDB & & \\
+		\hline
+		Document & CouchDB & & \\
+		\hline
+	\end{tabular}
+\end{table}
 
+\subsection{Relational Database Design Optimization}
+Let us look into how the performance of classic databases can be optimized. To this end, a process called \textit{tuning} can be involved. For instance, to improve the query performance of \textit{Oracle 11g} tables, we can use different tablespaces for each individual schema.  This results in more than one data file used for storage, which in turn allows us to optimize the size of memory blocks used. This is useful, since both small and large memory block sizes can be desirable, depending on the scenario. For example, \textit{warehouse type} data requires large memory blocks, whereas for \textit{OLTP} type data, we are required to use small block sizes. The total space allocation in a file is defined as an \textit{extent}, whereas one unit of I/O data is referred to as a \textit{block}. 
 \section{State of the Art}
-In this section an analysis of the available literature on the topic is done.
-This section may be split or subdivided into several sections or subsections.
-
-\subsection{Subsection Heading Here}
-Subsection text here.
-
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
-
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
-
-\section{Please Note}
-Regular research papers need at least two additional sections here. One section
-for contributions and methods and one section for the results. For seminar
-papers these sections can be omitted. 
-
+In this section, we shall look into, and compare, the different properties of SQL and NoSQL databases. For starters, 
+\section{Methods and Contributions}
+\section{Results}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -436,8 +355,6 @@ papers these sections can be omitted.
 \section{Conclusion}
 Put the conclusions of the work here. The conclusion is like the abstract with
 an additional discussion of open points.
-
-
 
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
