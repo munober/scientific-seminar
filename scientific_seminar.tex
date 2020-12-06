@@ -212,7 +212,7 @@ Classic, relational, SQL databases have proven their reliability, and versatilit
 \section{Introduction}
 One may commence by presenting the main issue with classic, SQL databases. It is the exponential way in which hardware requirements scale up with the amount of data stored. This means that it becomes exponentially more challenging to maintain speed, RAM and storage amounts within reasonable constraints, as the amount of data increases. \par
 Let us therefore introduce NoSQL databases. The main difference between these, and SQL databases, is how they scale. While SQL databases scale \textit{vertically}, NoSQL databases scale \textit{horizontally}. Specifically, it is the BASE (Basically Available State and Eventually Consistent) property of NoSQL databases which enables them to be a perfect choice for very large, connected, amounts of data. \par
-For the purpose of this paper, we shall consider the term \textit{relational} database as synonymous to \textit{SQL} database, and the term \textit{NoSQL} database as equivalent to \textit{Graph} database, unless other specified. As such, the respective pairs of terms will be used interchangeably. \par
+For the purpose of this paper, we shall consider the term \textit{relational} database (RDBMS) as synonymous to \textit{SQL} database, and the term \textit{NoSQL} database as equivalent to \textit{Graph} database, unless other specified. As such, the respective pairs of terms will be used interchangeably. \par
 It has been proved in research literature, as well as by the industry, that Graph databases perform radically better than relational databases for big data applications. This is especially true in scenarios where one can use the connected nature of data to their advantage. One prominent example of this is how Neo4j (NoSQL) performs much better than Oracle 11g (SQL). \par
 However, let us not forget that Graph databases are not the only kind of NoSQL database out there. In fact, there are four types in total. Let us therefore examine these in detail.
 \subsection{Types of NoSQL Databases}
@@ -263,15 +263,30 @@ Actual examples, together with actual package names, query languages and propert
 Let us look into how the performance of classic databases can be optimized. To this end, a process called \textit{tuning} can be involved. For instance, to improve the query performance of \textit{Oracle 11g} tables, we can use different tablespaces for each individual schema.  This results in more than one data file used for storage, which in turn allows us to optimize the size of memory blocks used. This is useful, since both small and large memory block sizes can be desirable, depending on the scenario. For example, \textit{warehouse type} data requires large memory blocks, whereas for \textit{OLTP} type data, we are required to use small block sizes. The total space allocation in a file is defined as an \textit{extent}, whereas one unit of I/O data is referred to as a \textit{block}. 
 The ACID (Atomicity, Consistency Isolation, Durability) property of SQL databases helps maintain consistency across the data, and enables efficient polling and querying, but even this is eventually overcome by the sheer size of modern databases for online, user-generated content. \par
 Even if SQL databases store data in separate tables, and normalization techniques, such as 1NF, 2NF and 3NF, can be used to reduce redundancy, this method remains unsuitable for modern applications. For instance, although it is possible to \textit{join} queries when searching a SQL databases for entries, this too becomes inefficient when using 20 or more parameters. \par
+
 \section{State of the Art}
 In this section, we shall look into, and compare, the different properties of SQL and NoSQL databases. For starters, let us revisit the scalability issue. As previously discussed, the more varied and larger the amount of data present in a SQL database, the more CPU and RAM a system will need. This is because relational databases scale \textit{vertically}, in contrast to NoSQL databases, which scale \textit{horizontally}. SQL databases are traditionally a good fit for applications where data integrity and security are important, since cryptolographic procedures and information security can be more easily implemented in such a scenario. NoSQL databases, however, are a great fit for very large, and growing, datasets, because they allow us to, for instance, add extra servers to an existing system with minimal intervention. \par
+
 \section{Methods and Contributions}
 Let us, for this section, start by introducing Eric Brewer's \textit{CAP Theorem} - Consistency, Availability and Partition Tolerance. A term by term analysis looks as follows: \textit{Consistency} describes the property of a system of achieving a \textit{stable state}, after one (or more) \textit{write} operations. \textit{Availability} describes data, namely it being present and ready for \textit{read} operations at one desired spot, after having been modified (right there or somewhere else). \textit{Partition Tolerance} refers to a system's ability to continue functioning, even if its resources are spread over different locations and nodes. Relational databases traditionally possess all 3 properties, whereas NoSQL databases (depending on the implementation) customarily only use the \textit{A} and \textit{P} parts.\par
-In relational databases, primary keys are used to ensure that data is \textit{unique} - exists in one single location. NoSQL databases, on the other hand, due to their distributed nature, have no such limitation, and are therefore much more flexible and responsive to the changes one would experience in a connected system, for instance. \par
-\subsection{Direct Acyclic Graphs}
+In relational databases, primary keys are used to ensure that data is \textit{unique} - exists in one single location. NoSQL databases, on the other hand, due to their distributed nature, have no such limitation, and are therefore much more flexible and responsive to the changes one would experience in a connected system, for instance. Moreover, tracking interaction between different objects is much easier in this scenario. \par
 
+\subsection{Direct Acyclic Graphs}
+Let us now investigate why this kind of graph 
+
+\subsection{Database Design Tuning}
+In this subsection, we shall make a small detour, and examine why tuning relational databases is so important, any why one should always consider doing it, both when deploying a product, and when running benchmarks on standard data to determine speed. \par
 
 \section{Results}
+\subsection{Comparisons of SQL and NoSQL Products}
+In the following subsections, we shall analyze and compare several \textit{competing} database types in a similar scenario.
+\subsubsection{Comparing Oracle 11g to Neo4j}
+
+\subsubsection{Comparing Microsoft SQL to MongoDB}
+
+\subsubsection{Comparing MySQL to MongoDB}
+
+\subsubsection{Comparing ServerDB to RavenDB}
 
 % An example of a floating figure using the graphicx package. Note that \label must occur AFTER (or within) \caption. For figures, \caption should occur after the \includegraphics. Note that IEEEtran v1.7 and later has special internal code that is designed to preserve the operation of \label within \caption even when the captionsoff option is in effect. However, because of issues like this, it may be the safest practice to put all your \label just after \caption rather than within \caption{}.
 % Reminder: the "draftcls" or "draftclsnofoot", not "draft", class option should be used if it is desired that the figures are to be displayed while in draft mode.
@@ -328,8 +343,11 @@ In relational databases, primary keys are used to ensure that data is \textit{un
 % Note that IEEE does not put floats in the very first column - or typically anywhere on the first page for that matter. Also, in-text middle ("here") positioning is not used. Most IEEE journals use top floats exclusively. Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom floats. This can be corrected via the \fnbelowfloat command of the stfloats package.
 
 \section{Conclusion}
-Put the conclusions of the work here. The conclusion is like the abstract with
-an additional discussion of open points.
+Having now accomplished what we set out to do - namely to present a thorough analysis, and comparison, of the two most common types of databases in use throughout industries in this day and age, let us now deliver the closing remarks and present future directions of research we consider relevant for undertaking. \par
+Firstly, it is widely accepted that NoSQL, Graph databases are the desirable way to store data  when systems are distributed and when flexibility, and redundancy, are needed. Such fields as online shops, social media, or some remote working tools rely on this type of system architectures, in order to ensure responsiveness, and reliable operation for multi-user collaboration. Further development and standardization of such systems could potentially open the doors to increased efficiency and reduced costs across the industry. \par
+On the other hand, relational databases still play a very important role for centralized, high-value or mission-critical data. It is only with this type of database that one can ensure the reliable storage of such information as medical records, employment and financial histories, or voter registrations. Future research in this area could involve the development of even more sophisticated file systems, optimized for fast flash storage, or increasing information security by means of tightening standards for advanced encryption and by rolling out more and more granular access control. \par 
+Moreover, let us once more stress the fact that we do not assert the superiority of either database type over the other. We remain strongly convinced that both have their own strengths and weaknesses, which one only needs be aware of when making the choice about which best suits their needs. \par
+Finally, after having illustrated the differing aspects of relational and NoSQL databases, and after having delivered our thoughts on the direction of future research, we shall now declare this work closed. 
 
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
