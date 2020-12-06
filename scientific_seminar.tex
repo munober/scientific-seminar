@@ -12,7 +12,6 @@
 
 % Use this package for new German hyphenation and to set some captions to German (e.g. Abstract -> Zusammenfassung)
 % \usepackage[ngerman]{babel}
-
 % Select input file coding Latin1 or UTF8.
 % See "http://en.wikipedia.org/wiki/Latin1" and "http://en.wikipedia.org/wiki/Utf8" for more information
 %\usepackage[latin1]{inputenc}
@@ -29,18 +28,15 @@
   % \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
+  % and their extensions so you won't have to specify these with every instance of \includegraphics
   % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \else
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
+  % will default to the driver specified in the system graphics.cfg if no driver is specified.
   % \usepackage[dvips]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
+  % and their extensions so you won't have to specify these with every instance of \includegraphics
   % \DeclareGraphicsExtensions{.eps}
 \fi
 
@@ -69,9 +65,7 @@
 %\usepackage{mdwtab}
 % Also highly recommended is Mark Wooding's extremely powerful MDW tools, especially mdwmath.sty and mdwtab.sty which are used to format equations and tables, respectively. The MDWtools set is already installed on most LaTeX systems. The lastest version and documentation is available at: http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
 
-
 % IEEEtran contains the IEEEeqnarray family of commands that can be used to generate multiline equations as well as matrices, tables, etc., of high quality.
-
 
 %\usepackage{eqparbox}
 % Also of notable interest is Scott Pakin's eqparbox package for creating (automatically sized) equal width boxes - aka "natural width parboxes".
@@ -122,7 +116,7 @@
 
 \begin{document}
 \title{Comparison of SQL Relational Databases and NoSQL Graph Databases}
-%
+
 % author names and IEEE memberships note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break a structure at a ~ so this keeps an author's name from being broken across two lines.
 % use \thanks{} to gain access to the first footnote area a separate \thanks must be used for each paragraph as LaTeX2e's \thanks was not built to handle multiple paragraphs.
 
@@ -146,10 +140,7 @@
 % "AB" then you have to do: "\textbf{A}\textbf{B}"
 % \thanks is no different in this regard, so shield the last } of each \thanks
 % that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as you are supposed to have spaces between the names. For what it is worth, this is a minor point as most people would not even notice if the said evil space somehow managed to creep in.
 
 % The paper headers
 \markboth{Scientific Seminar - Security in Information Technology, Winter Semester 2020/2021}%
@@ -162,18 +153,13 @@
 % 
 % *** Note that you probably will NOT want to include the author's ***
 % *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if you desire.
 
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
+% If you want to put a publisher's ID mark on the page you can do it like this:
 %\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
 % Remember, if you use this you must call \IEEEpubidadjcol in the second column for its text to clear the IEEEpubid mark.
 
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-% make the title area
+%\IEEEspecialpapernotice{(Invited Paper)} % use for special paper notices
 \maketitle
 
 
@@ -183,29 +169,20 @@ Classic, relational, SQL databases have proven their reliability, and versatilit
 
 \end{abstract}
 
-\textbf{Keywords:} Relational Database, NoSQL Graph Database, Tablespace 
+\textbf{Keywords:} Relational Database, NoSQL Graph Database, Tablespace, Graph Mining 
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
-% This preserves the distinction between vectors and scalars. However,
-% if the journal you are submitting to favors bold math in the abstract,
-% then you can use LaTeX's standard command \boldmath at the very start
-% of the abstract to achieve this. Many IEEE journals frown on math
-% in the abstract anyway.
+% This preserves the distinction between vectors and scalars. However, if the journal you are submitting to favors bold math in the abstract, then you can use LaTeX's standard command \boldmath at the very start of the abstract to achieve this. Many IEEE journals frown on math in the abstract anyway.
 
 % Note that keywords are not normally used for peerreview papers.
 %\begin{IEEEkeywords}
 %IEEEtran, journal, \LaTeX, paper, template.
 %\end{IEEEkeywords}
 
-
-
-% For peer review papers, you can put extra information on the cover
-% page as needed:
+% For peer review papers, you can put extra information on the cover page as needed:
 % \ifCLASSOPTIONpeerreview
 % \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
 % \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
+% For peerreview papers, this IEEEtran command inserts a page break and creates the second title. It will be ignored for other modes.
 % \IEEEpeerreviewmaketitle
 
 
@@ -260,23 +237,23 @@ Actual examples, together with actual package names, query languages and propert
 \end{table}
 
 \subsection{Relational Database Design Optimization}
+In this subsection, we shall make a small detour, and examine why tuning relational databases is so important, any why one should always consider doing it, both when deploying a product, and when running benchmarks on standard data to determine speed. \par
 Let us look into how the performance of classic databases can be optimized. To this end, a process called \textit{tuning} can be involved. For instance, to improve the query performance of \textit{Oracle 11g} tables, we can use different tablespaces for each individual schema.  This results in more than one data file used for storage, which in turn allows us to optimize the size of memory blocks used. This is useful, since both small and large memory block sizes can be desirable, depending on the scenario. For example, \textit{warehouse type} data requires large memory blocks, whereas for \textit{OLTP} type data, we are required to use small block sizes. The total space allocation in a file is defined as an \textit{extent}, whereas one unit of I/O data is referred to as a \textit{block}. 
 The ACID (Atomicity, Consistency Isolation, Durability) property of SQL databases helps maintain consistency across the data, and enables efficient polling and querying, but even this is eventually overcome by the sheer size of modern databases for online, user-generated content. \par
 Even if SQL databases store data in separate tables, and normalization techniques, such as 1NF, 2NF and 3NF, can be used to reduce redundancy, this method remains unsuitable for modern applications. For instance, although it is possible to \textit{join} queries when searching a SQL databases for entries, this too becomes inefficient when using 20 or more parameters. \par
 
 \section{State of the Art}
 In this section, we shall look into, and compare, the different properties of SQL and NoSQL databases. For starters, let us revisit the scalability issue. As previously discussed, the more varied and larger the amount of data present in a SQL database, the more CPU and RAM a system will need. This is because relational databases scale \textit{vertically}, in contrast to NoSQL databases, which scale \textit{horizontally}. SQL databases are traditionally a good fit for applications where data integrity and security are important, since cryptolographic procedures and information security can be more easily implemented in such a scenario. NoSQL databases, however, are a great fit for very large, and growing, datasets, because they allow us to, for instance, add extra servers to an existing system with minimal intervention. \par
-
-\section{Methods and Contributions}
-Let us, for this section, start by introducing Eric Brewer's \textit{CAP Theorem} - Consistency, Availability and Partition Tolerance. A term by term analysis looks as follows: \textit{Consistency} describes the property of a system of achieving a \textit{stable state}, after one (or more) \textit{write} operations. \textit{Availability} describes data, namely it being present and ready for \textit{read} operations at one desired spot, after having been modified (right there or somewhere else). \textit{Partition Tolerance} refers to a system's ability to continue functioning, even if its resources are spread over different locations and nodes. Relational databases traditionally possess all 3 properties, whereas NoSQL databases (depending on the implementation) customarily only use the \textit{A} and \textit{P} parts.\par
+\subsection{The CAP Theorem}
+To enable us to better understand the fundamental differences between relational and Graph databses, let us introduce Eric Brewer's \textit{CAP Theorem} - Consistency, Availability and Partition Tolerance. A term by term analysis looks as follows: \textit{Consistency} describes the property of a system of achieving a \textit{stable state}, after one (or more) \textit{write} operations. \textit{Availability} describes data, namely it being present and ready for \textit{read} operations at one desired spot, after having been modified (right there or somewhere else). \textit{Partition Tolerance} refers to a system's ability to continue functioning, even if its resources are spread over different locations and nodes. Relational databases traditionally possess all 3 properties, whereas NoSQL databases (depending on the implementation) customarily only use the \textit{A} and \textit{P} parts.\par
 In relational databases, primary keys are used to ensure that data is \textit{unique} - exists in one single location. NoSQL databases, on the other hand, due to their distributed nature, have no such limitation, and are therefore much more flexible and responsive to the changes one would experience in a connected system, for instance. Moreover, tracking interaction between different objects is much easier in this scenario. \par
 
-\subsection{Direct Acyclic Graphs}
-Let us now investigate why this kind of graph 
-
-\subsection{Database Design Tuning}
-In this subsection, we shall make a small detour, and examine why tuning relational databases is so important, any why one should always consider doing it, both when deploying a product, and when running benchmarks on standard data to determine speed. \par
-
+\section{Methods and Contributions}
+For this section, we will investigate in more detail the structures of Graph and SQL databases, compare their respective performance, and present some interesting use cases for each. \par
+\subsection{Data Mining and Grpah Visualization}
+One very important application of Graph Databases is their enabling more robust and faster data mining. \par
+One author \cite{IEEEpaper2:swapnil} describes the \textit{Graph Mining Framework}.
+\subsection{On SQL and the Importance of Information Security}
 \section{Results}
 \subsection{Comparisons of SQL and NoSQL Products}
 In the following subsections, we shall analyze and compare several \textit{competing} database types in a similar scenario.
@@ -398,11 +375,23 @@ Finally, after having illustrated the differing aspects of relational and NoSQL 
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
+\begin{thebibliography}{3}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+% \bibitem{IEEEhowto:kopka}
+% H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\bibitem{IEEEpaper1:comparison}
+Wisal Khan, Waqas Ahmad, Bin Luo and Ejaz Ahmed, SQL Database with physical database tuning technique and NoSQL graph database comparisons
+2019
+
+\bibitem{IEEEpaper2:mining}
+Swapnil Shrivastava and Supriya N. Pal, Graph Mining Frameworks for Finding and Visualizing Substructures using Graph Databases
+2009
+
+\bibitem{IEEEpaper3:hybrid}
+H.R. Vyawahare, P.P. Karde and V.M. Thakare, A Hybrid Database Approach Using Graph and Relational Database
+2019
 
 \end{thebibliography}
 
