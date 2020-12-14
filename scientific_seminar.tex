@@ -25,11 +25,11 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
+  \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \else
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no driver is specified.
@@ -237,14 +237,14 @@ Actual examples, together with actual package names, query languages and propert
 	\end{tabular}
 \end{table}
 
-Having now delivered our remarks about the fundamental differences between SQL and Graph Databases, let us proceed with a more detailed description of the current state of development in the industry.
+Having now delivered our remarks about the fundamental differences between SQL and Graph Databases, and the different types there are out there, let us proceed with a more detailed description of the current state of development in the industry.
 
 \section{State of the Art}
 In this section, we shall look into, and compare, the different properties of SQL and NoSQL databases. For starters, let us revisit the scalability issue. As previously discussed, the more varied and larger the amount of data present in a SQL database, the more CPU and RAM a system will need. This is because relational databases scale \textit{vertically}, in contrast to NoSQL databases, which scale \textit{horizontally}. \par
 SQL databases are traditionally a good fit for applications where data integrity and security are important, since cryptolographic procedures and information security can be more easily implemented in such a scenario. NoSQL databases, however, are a great fit for very large, and growing, datasets, because they allow us to, for instance, add extra storage servers to an existing system with minimal intervention. The following theoretical exercise might help one understand this better. \par
 \subsection{The CAP Theorem}
 To enable us to better understand the fundamental differences between relational and Graph databses, let us introduce Eric Brewer's \textit{CAP Theorem} - Consistency, Availability and Partition Tolerance. \cite{brewer_cap_theorem} A term by term analysis looks as follows: \textit{Consistency} describes the property of a system of achieving a \textit{stable state}, after one (or more) \textit{write} operations. \textit{Availability} describes data, namely it being present and ready for \textit{read} operations at one desired spot, after having been modified (right there or somewhere else). \textit{Partition Tolerance} refers to a system's ability to continue functioning, even if its resources are spread over different locations and nodes. \par
-In relational databases, primary keys are used to ensure that data is \textit{unique} - it exists in one single location. NoSQL databases, on the other hand, and in no small part due to their distributed nature, cannot provide such a feature. But let us not believe that has to necessarily be a bad thing. NoSQL databases will, because of this, be much more flexible and responsive to the changes one would experience in a connected system, for instance. Moreover, tracking interaction between different objects is much easier in this scenario. \par
+In relational databases, primary keys are used to ensure that data is \textit{unique} - it exists in one single location. NoSQL databases, on the other hand, and in no small part due to their distributed nature, cannot provide such a feature. But let us not believe that this would have to be a bad thing. NoSQL databases will, because of this, be much more flexible and responsive to the changes one would experience in a connected system, for instance. Moreover, tracking interaction between different objects is much easier in this scenario. \par
 However, we shall quickly realize that there is one obvious \textit{catch} to all of this: a distributed database system can never offer true CAP features. Not in a logically rigorous manner, at least. That is because of the intrisic nature of how the data is stored in such a system cannot guarantee total and immediate consistency. Let us think about how data propagates across the internet. For the purpose of this, let one imagine they would change one's online profile picture for their Google profile, on their desktop. After the change is done, let one immeaditealy pick up their smartphone and open the YouTube app, where they had already been logged in with their Google account. One can very sensibly assume that the picture the user would see on their smartphone, at least for the first few moments, will be their old profile picture. This goes to prove that, for a brief period of time, that one user had \textit{two different profile pictures}, at the same time. A state which very obviously contradicts any form of consistency. \par
 To sum up, let one remember that relational databases traditionally possess all 3 CAP properties, whereas NoSQL databases (depending on the implementation) customarily only support the \textit{Availability} and \textit{Partition Tolerance} parts, but lack the \textit{Consistency} feature. Let us now look out over on the other side of the fence, and see how relational, SQL databases fare. \par
 
@@ -253,7 +253,7 @@ In this subsection, we shall examine why tuning relational databases is so impor
 Let us look into how the performance of classic databases can be optimized. To this end, a process called \textit{tuning} can be involved. For instance, to improve the query performance of \textit{Oracle 11g} tables, we can use different tablespaces for each individual schema.  This results in more than one data file used for storage, which in turn allows us to optimize the size of memory blocks used. This is useful, since both small and large memory block sizes can be desirable, depending on the scenario. For example, \textit{warehouse type} data requires large memory blocks, whereas for \textit{OLTP} type data, we are required to use small block sizes. The total space allocation in a file is defined as an \textit{extent}, whereas one unit of I/O data is referred to as a \textit{block}. 
 The ACID (Atomicity, Consistency Isolation, Durability) property of SQL databases helps maintain consistency across the data, and enables efficient polling and querying, but even this is eventually overcome by the sheer size of modern databases for online, user-generated content. \par
 Even if SQL databases store data in separate tables, and normalization techniques, such as 1NF, 2NF and 3NF, can be used to reduce redundancy, this method remains unsuitable for modern applications. For instance, although it is possible to \textit{join} queries when searching a SQL databases for entries, this too becomes inefficient when using 20 or more parameters. \par
-Judging by this, and by the thoughts expressed in the previous subsection, we can conclude that both sides prove to have specific design limitations, which are impossible to directly overcome. As such, let us now present the \textit{hybrid} approach. 
+Judging by this, and by the thoughts expressed in the previous subsection, we can conclude that both sides prove to have specific design limitations, which are impossible to directly overcome. As such, let us now dive into the specific advantages and disadvatages afforded by the underlying technologies and the very nature of these two kinds of databases, respectively. 
 
 \section{Methods and Contributions}
 
@@ -269,16 +269,34 @@ Having now seen the hybrid approach to database design, let us look into how we 
 In the day and age of the internet, where data is being generated and saved at \textit{breaknech} speed, making sense of this content has become a matter of automated analysis. Conveniently, one very important application of Graph Databases is their enabling more robust, and faster, data mining. \par
 
 \section{Results} 
-For this section, we will investigate in more detail the structures of Graph and SQL databases, compare their respective performance, and present some interesting use cases for each. \par
-\subsection{Comparisons of SQL and NoSQL Products}
-In the following subsections, we shall analyze and compare several \textit{competing} database types in a similar scenario.
-\subsubsection{Comparing Oracle 11g to Neo4j}
+For this section, we will compare the access (read and write) performance of different types of databases. \par
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.5in]{plots/phys_vs_neo4j}
+	\caption{Performance Comparison of Neo4j with a RDBS with physical tuning \cite{IEEEpaper1:comparison}}
+	\label{graph_phys_vs_neo4j}
+\end{figure}
 
-\subsubsection{Comparing Microsoft SQL to MongoDB}
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.5in]{plots/no phys vs neo4j}
+	\caption{Performance Comparison of Neo4j with a RDBS with no physical tuning \cite{IEEEpaper1:comparison}}
+	\label{graph_phys_vs_neo4j}
+\end{figure}
 
-\subsubsection{Comparing MySQL to MongoDB}
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.5in]{plots/phys vs neo4j table}
+	\caption{Performance Comparison of (physically optimized) Oracle 11g with Neo4j \cite{IEEEpaper1:comparison}}
+	\label{graph_phys_vs_neo4j}
+\end{figure}
 
-\subsubsection{Comparing ServerDB to RavenDB}
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.5in]{plots/no tuning table}
+	\caption{Performance Comparison of Oracle 11g (no physical optimization) with Neo4j \cite{IEEEpaper1:comparison}}
+	\label{graph_phys_vs_neo4j}
+\end{figure}
 
 % An example of a floating figure using the graphicx package. Note that \label must occur AFTER (or within) \caption. For figures, \caption should occur after the \includegraphics. Note that IEEEtran v1.7 and later has special internal code that is designed to preserve the operation of \label within \caption even when the captionsoff option is in effect. However, because of issues like this, it may be the safest practice to put all your \label just after \caption rather than within \caption{}.
 % Reminder: the "draftcls" or "draftclsnofoot", not "draft", class option should be used if it is desired that the figures are to be displayed while in draft mode.
