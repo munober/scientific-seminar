@@ -64,11 +64,9 @@ The reason for the existence of these new, very flexible types of databases has 
 Let us, therefore, introduce NoSQL databases. The main difference between these, and SQL databases, is how they scale. While SQL databases scale \textit{vertically}, NoSQL databases scale \textit{horizontally}. Specifically, it is the BASE (Basically Available State and Eventually Consistent) property of NoSQL databases which enables them to be a perfect choice for very large, connected, amounts of data. \par
 For this paper, we shall consider the term \textit{relational} database (RDBMS) as synonymous to \textit{SQL} database, and the term \textit{NoSQL} database as equivalent to \textit{Graph} database, unless other specified. As such, the respective pairs of terms will be used interchangeably. \par
 It has been proved in the research literature, as well as by the industry, that Graph databases perform radically better than relational databases for big data applications. \cite{IEEEpaper1:comparison} This is especially true in scenarios where one can use the connected nature of data to their advantage. One prominent example of this is how Neo4j (NoSQL) performs much better than Oracle 11g (SQL). \cite{comparison_2015} \par
-However, let us not forget that Graph databases are not the only kind of NoSQL database out there. There are four types in total. Let us examine these in detail.
-\subsection{Types of NoSQL Databases}
-There are four different kinds of NoSQL databases. Their properties and use scenarios depend on the needs and requirements of the applications in which they are used. 
+However, let us not forget that Graph databases are not the only kind of NoSQL database. There are four types in total. Let us examine these in detail. 
 \begin{itemize}
-	\item \textbf{Key-Value}: these are, essentially, hash tables, where unique hash keys are used to search for and point to specific values; the contents themselves are not used during queries.
+	\item \textbf{Key-Value}: these are, essentially, hash tables, where unique hash keys are used to search for and point to specific values; the contents themselves are not used for queries.
 	\item \textbf{Document}: Data is stored as a key/value tuple, and both the content, as well as the \textit{key} are used for searches, which constitutes a major difference from the type above. Documents of this type can be stored in XML, JSON, and BSON formats, and popular apps using this type of database include MongoDB and CouchDB.
 	\item \textbf{Wide-Column}: These databases are made unique by the hybrid approach used to store data. In this scenario, which is mainly used in \textit{cluster environments} and for distributed data, we will combine the features of relational databases with a key-value storage schema. Examples such as Hbase, Cassandra, and Accumulo spring to mind.
 	\item \textbf{Graph}: This type is used where the data has a high degree of connectivity since such databases can naturally store relationships between Independent pieces of data. Examples include Neo4j, Pregel, ArrangoDB, and OrientDB. 
@@ -77,7 +75,7 @@ Actual examples, together with actual package names, query languages and propert
 
 \begin{table}[!t]
 	\renewcommand{\arraystretch}{1.3} % increase table row spacing, adjust to taste
-	\caption{Types of NoSQL Databases with Examples}
+	\caption{NoSQL Database Frameworks and Their Features}
 	\label{table_types_nosql}
 	\centering
 	\begin{tabular}{|p{1.1cm}|p{1.2cm}|p{2.3cm}|p{2.3cm}|} 
@@ -107,14 +105,14 @@ Actual examples, together with actual package names, query languages and propert
 	\end{tabular}
 \end{table}
 
-Having now delivered our remarks about the fundamental differences between SQL and Graph Databases, and the different types there are out there, let us proceed with a more detailed description of the current state of development in the industry.
+Having delivered our remarks about the fundamental differences between SQL and Graph Databases, let us proceed with a more detailed description of the current state of of these databases in the industry, as well as investigating how wide their rollut and applications currently are.
 
 \section{State of the Art}
 In this section, we shall look into, and compare, the different properties of SQL and NoSQL databases. For starters, let us revisit the scalability issue. As previously discussed, the more varied and larger the amount of data present in a SQL database, the more CPU and RAM a system will need. This is because relational databases scale \textit{vertically}, in contrast to NoSQL databases, which scale \textit{horizontally}. \par
 SQL databases are traditionally a good fit for applications where data integrity and security are important, since cryptographic procedures and information security can be more easily implemented in such a scenario. NoSQL databases, however, are a great fit for very large, and growing, datasets, because they allow us to, for instance, add extra storage servers to an existing system with minimal intervention. The following theoretical exercise might help one understand this better. \par
 \subsection{The CAP Theorem}
 To enable us to better understand the fundamental differences between relational and Graph databases, let us introduce Eric Brewer's \textit{CAP Theorem} - Consistency, Availability and Partition Tolerance. \cite{brewer_cap_theorem} A term by term analysis looks as follows: \textit{Consistency} describes the property of a system of achieving a \textit{stable state}, after one (or more) \textit{write} operations. \textit{Availability} describes data, namely, it being present and ready for \textit{read} operations at one desired spot, after having been modified (right there or somewhere else). \textit{Partition Tolerance} refers to a system's ability to continue functioning, even if its resources are spread over different locations and nodes. \par
-In relational databases, primary keys are used to ensure that data is \textit{unique} - it exists in one single location. NoSQL databases, on the other hand, and in no small part due to their distributed nature, cannot provide such a feature. But let us not believe that this would have to be a bad thing. NoSQL databases will, because of this, be much more flexible and responsive to the changes one would experience in a connected system, for instance. Moreover, tracking interaction between different objects is much easier in this scenario. \par
+In relational databases, primary keys are used to ensure that the data is \textit{unique} - it exists in one single location. NoSQL databases, on the other hand, and in no small part due to their distributed nature, cannot provide such a feature. But let us not believe that this would have to be a bad thing. NoSQL databases will, because of this, be much more flexible and responsive to the changes one would experience in a connected system, for instance. Moreover, tracking interaction between different objects is much easier in this scenario. \par
 However, we shall quickly realize that there is one obvious \textit{catch} to all of this: a distributed database system can never offer true CAP features. Not in a logically rigorous manner, at least. That is because the intrinsic nature of how the data is stored in such a system cannot guarantee total and immediate consistency. Let us think about how data propagates across the internet. For the purpose of this, let one imagine they would change one's online profile picture for their Google profile, on their desktop. After the change is done, let one immeaditely pick up their smartphone and open the YouTube app, where they had already been logged in with their Google account. One can very sensibly assume that the picture the user would see on their smartphone, at least for the first few moments, will be their old profile picture. This goes to prove that, for a brief period of time, that one user had \textit{two different profile pictures}, at the same time. A state which very obviously contradicts any form of consistency. \par
 To sum up, let one remember that relational databases traditionally possess all 3 CAP properties, whereas NoSQL databases (depending on the implementation) customarily only support the \textit{Availability} and \textit{Partition Tolerance} parts, but lack the \textit{Consistency} feature. Let us now look out over on the other side of the fence, and see how relational, SQL databases fare. \par
 As such, let us now dive into the specific advantages and disadvantages afforded by the underlying technologies and the very nature of these two kinds of databases, respectively. 
@@ -131,11 +129,11 @@ The main assumption the authors make about enabling a hybrid database approach i
 The workflow proposed in the paper is relatively straightforward. One would start by loading and analyzing data, determining whether its structure would be a better fit for either the relational or the NoSQL sides of the harmonized, hybrid database, then store that data appropriately. Obviously, there are many variations that can be made to these steps. For example, one could use the hybrid framework to simply convert databases of one type into the other, to benefit from the advantages of the other side. One could also use the framework to harmonize the types of queries used in their apps and reduce the overhead generated by having to use multiple querying languages. Finally, the authors go into some detail about the advantages of keeping data \textit{in memory}. These mostly revolve around access times, and availability, plus reducing the storage and processing overhead generated by real-time data conversion. \par
 Having now seen the hybrid approach to database design, let us look into how we can make sense of the data inside our databases by what is known as \textit{Graph Mining Framework}, as described in \cite{IEEEpaper2:mining}.
 
-\subsection{Data Mining and Graph Visualization}
-In the day and age of the internet, where data is being generated and saved at \textit{breakneck} speed, making sense of this content has become a matter of automated analysis. Conveniently, one very important application of Graph Databases is their enabling more robust, and faster, data mining. \par
-The main features one \textit{graph mining} tool would have to provide include graph preprocessing, association discovery, cluster detection, and graph visualization. Let us investigate these in detail. \par
+\subsection{Data Mining and NoSQL Graph Visualization}
+In the day and age of the internet, where data is being generated and saved at \textit{breakneck} speed, making sense of this content has become a matter of automated analysis. Conveniently, one very important application of NoSQL (Graph) Databases is their enabling more robust, and faster, data mining. \par
+The main features a NoSQL \textit{graph mining} tool would have to provide include graph preprocessing, association discovery, cluster detection, and graph visualization. Let us investigate these in detail. \par
 Firstly, graph preprocessing is to be understood as an \textit{umbrella} term for all the necessary steps to transform data from an arbitrary format, such as \textit{XML} or the result of web-crawling, into a specific format for our application. The data would be stored as an undirected graph, with non-unique labeled edges. \cite{IEEEpaper2:mining} Secondly, when it comes to association discovery, we could set arbitrary thresholds for the number of edges connecting different nodes and the types of nodes we are looking at. This would allow us to, for example, discover popular actor-director pairs in a movie database. Third, if we were to detect data clusters, we could, for instance, use algorithms such as trawling \cite{paper_2_ref_1}, shingling \cite{paper_2_ref_2}, connection subgraphs \cite{paper_2_ref_3}, or maximum clique detection \cite{paper_2_ref_4}, which would enable our framework to answer questions such as identifying one user's social media friends, or the number of news articles on one particular topic. Lastly, a form of graph visualization would allow one to input data in some arbitrary text-based descriptive format and receive a visual representation of this graph. \par
-One such framework would enable data scientists to make more sense of the plethora of data available in different places. 
+One such framework would enable data scientists to make more sense of the plethora of data available in the highly-distributed and large NoSQL databases of today's internet. 
 
 \section{Results} 
 For this section, we will compare the access (read and write) performance of different types of databases. 
@@ -158,14 +156,14 @@ For this subsection, let us observe some plots. In \textit{Figure \ref{graph_phy
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=2.8in]{plots/phys vs neo4j table}
-	\caption{Performance Comparison of (physically optimized) Oracle 11g with Neo4j \cite{IEEEpaper1:comparison}}
+	\caption{Performance Comparison of (physically optimized) Oracle 11g with Neo4j, according to Khan et al. \cite{IEEEpaper1:comparison}}
 	\label{table_phys_vs_neo4j}
 \end{figure}
 
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=2.8in]{plots/no tuning table}
-	\caption{Performance Comparison of Oracle 11g (no physical optimization) with Neo4j \cite{IEEEpaper1:comparison}}
+	\caption{Performance Comparison of Oracle 11g (no physical optimization) with Neo4j, according to Khan et al. \cite{IEEEpaper1:comparison}}
 	\label{table_no_phys_vs_neo4j}
 \end{figure}
 
