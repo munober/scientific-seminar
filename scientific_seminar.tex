@@ -55,7 +55,7 @@
 Classic, relational, SQL databases have proven their reliability, and versatility, in many different scenarios over the past few decades. However wide their field of application may be though, there are still many situations, where one can be limited by the constraints of these traditional data structures. Efficiently querying very large user databases is one such situation. In this work, we are going to investigate a different paradigm for  big data management: Graph Databases. This relatively new breed of data management systems are already finding wide acceptance, and are being actively deployed, across many industries. Use cases such as social media applications come to mind, where scalability is of prime importance since datasets could theoretically achieve infinite dimensions. In this work, we will compare Graph (NoSQL) databases, as well as their strengths, and weaknesses, to classic, relational SQL databases. We will also dive into innovative new technologies, which promise to enable completely new ways of working with databases and making sense of the data inside.
 \end{abstract}
 
-\textbf{Keywords:} Relational Database, NoSQL Graph Database, Tablespace, Graph Mining, Hybrid (No)SQL 
+\textbf{Keywords:} Relational SQL Database, Graph NoSQL Database, Tablespace, Graph Mining, Hybrid Database
 
 \section{Introduction}
 Databases have been used as the prime way of storing data in digital formats for the better part of the past 70 years since computer memory became large enough to enable this in the 1960s. It is safe to assume that virtually every kind of tabular data, which has since been digitalized, has been converted into one such database, or a closely related approximation thereof. \cite{bachman_1973} \par
@@ -80,31 +80,29 @@ Actual examples, together with actual package names, query languages and propert
 	\caption{Types of NoSQL Databases with Examples}
 	\label{table_types_nosql}
 	\centering
-	\begin{tabular}{|c|c|c|c|}
+	\begin{tabular}{|p{1.1cm}|p{1.2cm}|p{2.3cm}|p{2.3cm}|} 
 		\hline
-		Type & Package & Query Language & Property Support  \\
+		Type & Package & Query Language & Transaction Support  \\
 		\hline
 		Graph & Neo4j & CypherQL & ACID \\
 		\hline
-		Graph & ArangoDB & AQL & \\
-		\hline
-		 & Hive & HQL & \\
+		Graph & ArangoDB & AQL & ACID support for Multi-Document \\
 		\hline
 		Graph & OrientDB & SQL & ACID \\
 		\hline
-		Key-Value & Riak & &  \\
+		Key-Value & Riak & Custom Subset of SQL &  Partial ACID Support (CID)\\
 		\hline
-		Key-Value & Redis & & \\
+		Key-Value & Redis & Custom Syntax & Partial ACID support (ACI)\\
 		\hline
-		Key-Value & Voldemort & & \\
+		Key-Value & Voldemort & Custom API & Partial ACID support \\
 		\hline
-		Column & Hbase & & \\
+		Column & Hbase & Custom API (Java) & Limited ACID\\
 		\hline
-		Column & Accumulo & & \\
+		Column & Accumulo & Custom API (Java, Python, PHP, Ruby) & ACID \\
 		\hline
-		Document & MongoDB & & \\
+		Document & MongoDB & Custom API & ACID \\
 		\hline
-		Document & CouchDB & & \\
+		Document & CouchDB & Fauxton \cite{gh_couchdb} & ACID \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -159,14 +157,14 @@ For this subsection, let us observe some plots. In \textit{Figure \ref{graph_phy
 
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=2.5in]{plots/phys vs neo4j table}
+	\includegraphics[width=2.8in]{plots/phys vs neo4j table}
 	\caption{Performance Comparison of (physically optimized) Oracle 11g with Neo4j \cite{IEEEpaper1:comparison}}
 	\label{table_phys_vs_neo4j}
 \end{figure}
 
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=2.5in]{plots/no tuning table}
+	\includegraphics[width=2.8in]{plots/no tuning table}
 	\caption{Performance Comparison of Oracle 11g (no physical optimization) with Neo4j \cite{IEEEpaper1:comparison}}
 	\label{table_no_phys_vs_neo4j}
 \end{figure}
@@ -225,6 +223,9 @@ C. Faloutsos, K. McCurley, A. Tomkins, "Fast Discovery of Connection Subgraphs" 
 
 \bibitem{paper_2_ref_4}
 I.M. Bomze, M. Budinich, P.M. Pardalos, M. Pelillo, "The Maximum Clique Problem" 1999
+
+\bibitem{gh_couchdb}
+Apache CouchDB GitHub Repository - https://github.com/apache/couchdb-fauxton (Retrieved 01/17/2021)
 
 \end{thebibliography}
 
