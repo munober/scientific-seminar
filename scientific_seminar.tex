@@ -120,7 +120,7 @@ As such, let us now dive into the specific advantages and disadvantages afforded
 \section{Methods and Contributions}
 \subsection{On SQL and the Importance of Information Security}
 
-As previously discussed, relational databases support the ACID (atomicity, consistency, isolation, and durability) property. This ensures that we can reliably implement data security-related measures for our data. For instance, financial applications need to provide guarantees that money sums are accurate all the time, and that there is absolutely no ambiguity whatsoever about how much one's account is worth at one specific time-point. As a comparison, let us draw once again upon the example of changing one's profile picture and waiting for it to propagate across different devices. This would be unacceptable for a financial application since it could potentially allow for tampering and abuse. Let one imagine a very trading fast bot that would capitalize on such a loophole by performing 2 identical purchase orders in very fast succession, faster than the system could account for the cost of the first one, and therefore buy the second asset for virtually zero money since their total capital had remained unchanged since the first buy. \par
+As previously discussed, relational databases support the ACID (atomicity, consistency, isolation, and durability) property. This ensures that we can reliably implement data security-related measures for our data. For instance, Kumar et al. explain in \cite{nosql_db_sec} how financial applications need to provide guarantees that monetary amounts are accurate all the time, and that there is absolutely no doubt whatsoever about how much one's account is worth at a given time. Any such ambiguity would be unacceptable for a financial application, as it could potentially allow for tampering and abuse. As described by Brook et al. in \cite{brook_hf_trading}, let one imagine a very fast trading bot that would capitalize on such a loophole by performing \textit{two} identical purchase orders in \textit{very} fast succession, faster than the system could account for the cost of the first one, and therefore buy the second asset for virtually zero money since their total capital had remained unchanged since the first buy. \par
 For this reason, we are limited to only using SQL databases for such sensitive applications as financial platforms. Using them requires us to separate and log our different actions utilizing \textit{orders} or \textit{transactions} - which ensures atomicity and isolation. Each of these transactions would then need to be centrally approved before changing any data in the actual database - therefore ensuring consistency and durability. Unfortunately, such guarantees would never be possible with a pure Graph database (one without modifications and extra provisions, that is). As such, let us look into how we could potentially get the benefits of both worlds, with a hybrid approach.\par
 
 \subsection{The Hybrid Approach}
@@ -184,46 +184,46 @@ Having now accomplished what we set out to do - namely to present a thorough ana
 \begin{thebibliography}{3}
 
 \bibitem{IEEEpaper1:comparison}
-Wisal Khan, Waqas Ahmad, Bin Luo and Ejaz Ahmed, SQL Database with physical database tuning technique and NoSQL graph database comparisons
-(2019)
+W. Khan, W. Ahmad, B. Luo and E. Ahmed, SQL Database with Physical Tuning Technique and NoSQL Graph Database Comparisons (2019)
 
 \bibitem{IEEEpaper2:mining}
-Swapnil Shrivastava and Supriya N. Pal, Graph Mining Frameworks for Finding and Visualizing Substructures using Graph Databases
-(2009)
+Swapnil Shrivastava and Supriya N. Pal, Graph Mining Frameworks for Finding and Visualizing Substructures using Graph Databases (2009)
 
 \bibitem{IEEEpaper3:hybrid}
-H.R. Vyawahare, P.P. Karde and V.M. Thakare, A Hybrid Database Approach Using Graph and Relational Database
-(2019)
+H.R. Vyawahare, P.P. Karde and V.M. Thakare, A Hybrid Database Approach Using Graph and Relational Database (2019)
 
 \bibitem{bachman_1973}
-Bachman, Charles W., The Programmer as Navigator. Communications of the ACM. 16 (11): 653–658. doi:10.1145/355611.362534.
-(1973)
+Bachman, Charles W., The Programmer as Navigator (1973)
 
 \bibitem{codd_1970}
-Codd, Edgar Frank, A Relational Model of Data for Large Shared Data Banks. Communications of the ACM. 13 (6): 377–387. doi:10.1145/362384.362685. S2CID 207549016
-(June 1970)
+E. Codd, A Relational Model of Data for Large Shared Data Banks (1970)
 
 \bibitem{comparison_2015}
-Oussous, A., F.-Z. Benjelloun, A. A. Lahcen, and S. Belfkih, Comparison and Classication of NoSQL Databases for Big Data (in Proceedings of International Conference on Big Data, Cloud and Applications)
-(2015)
+Oussous, A., F.-Z. Benjelloun, A. A. Lahcen, and S. Belfkih, Comparison and Classication of NoSQL Databases for Big Data (2015)
 
 \bibitem{brewer_cap_theorem}
-Seth Gilbert and Nancy Lynch, "Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services", ACM SIGACT News, Volume 33 Issue 2 (2002), pg. 51–59. doi:10.1145/564585.564601.
+S. Gilbert and N. Lynch, "Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services"
 
 \bibitem{paper_2_ref_1}
-R. Kumar, P. Rafhavan, S. Rajagopalan, A. Tomkins, "Thrawling the Web for Emerging Cybercommunities" 1999
+R. Kumar, P. Rafhavan, S. Rajagopalan, A. Tomkins, "Thrawling the Web for Emerging Cybercommunities" (1999)
 
 \bibitem{paper_2_ref_2}
-D. Gibson, R. Kumar, A. Tomkins, "Extracting Large, Dense Subgraphs in Massive Graphs" 2005
+D. Gibson, R. Kumar, A. Tomkins, "Extracting Large, Dense Subgraphs in Massive Graphs" (2005)
 
 \bibitem{paper_2_ref_3}
-C. Faloutsos, K. McCurley, A. Tomkins, "Fast Discovery of Connection Subgraphs" 2004
+C. Faloutsos, K. McCurley, A. Tomkins, "Fast Discovery of Connection Subgraphs" (2004)
 
 \bibitem{paper_2_ref_4}
-I.M. Bomze, M. Budinich, P.M. Pardalos, M. Pelillo, "The Maximum Clique Problem" 1999
+I.M. Bomze, M. Budinich, P.M. Pardalos, M. Pelillo, "The Maximum Clique Problem" (1999)
 
 \bibitem{gh_couchdb}
 Apache CouchDB GitHub Repository - https://github.com/apache/couchdb-fauxton (Retrieved 01/17/2021)
+
+\bibitem{nosql_db_sec}
+J. Kumar and V. Garg, "Security analysis of unstructured data in NOSQL MongoDB database," (2017)
+
+\bibitem{brook_hf_trading}
+M. Brook, C. Sharp, G. Ushaw, W. Blewitt and G. Morgan, "Volatility Management of High Frequency Trading Environments," (2013)
 
 \end{thebibliography}
 
