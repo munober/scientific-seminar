@@ -142,16 +142,18 @@ For this subsection, let us observe some plots. In \textit{Figure \ref{graph_phy
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=2.5in]{plots/phys_vs_neo4j}
-	\caption{Performance Comparison of Neo4j with a RDBS with physical tuning \cite{IEEEpaper1:comparison}}
+	\caption{Performance Comparison of Neo4j with a tuned RDB \cite{IEEEpaper1:comparison}}
 	\label{graph_phys_vs_neo4j}
 \end{figure}
 
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=2.5in]{plots/no phys vs neo4j}
-	\caption{Performance Comparison of Neo4j with a RDBS with no physical tuning \cite{IEEEpaper1:comparison}}
+	\caption{Performance Comparison of Neo4j with a non-tuned RDBS \cite{IEEEpaper1:comparison}}
+	% \vspace{-0.7cm}
 	\label{graph_no_phys_vs_neo4j}
 \end{figure}
+
 
 \begin{figure}[!t]
 	\centering
@@ -163,9 +165,11 @@ For this subsection, let us observe some plots. In \textit{Figure \ref{graph_phy
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=2.8in]{plots/no tuning table}
-	\caption{Performance Comparison of Oracle 11g (no physical optimization) with Neo4j, according to Khan et al. \cite{IEEEpaper1:comparison}}
+	\caption{Performance Comparison of Oracle 11g (no physical optimization) with Neo4j, according to Khan et al. \cite
+	{IEEEpaper1:comparison}}
 	\label{table_no_phys_vs_neo4j}
 \end{figure}
+
 
 \subsection{Relational Database Design Optimization}
 In this subsection, we shall examine the results and performance achieved by tuning relational databases, why this is so important, and why one should always consider doing it, both when deploying a product, and when running benchmarks on standard data to determine speed. \par
